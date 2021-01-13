@@ -15,3 +15,18 @@ services:
     entrypoint: ./entrypoint.sh
     environment:
       - PORT=5000
+  client:
+    container_name: toolbox_client
+    restart: always
+    build:
+      context: ./client
+      target: base
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 3000:3000
+    stdin_open: true
+    command: npm start
+    environment:
+      - PORT=3000
