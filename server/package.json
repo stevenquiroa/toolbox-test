@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "standard": "standard --fix ./src",
+    "test": "standard --env mocha && mocha"
   },
   "author": "",
   "license": "ISC",
