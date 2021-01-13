@@ -25,7 +25,7 @@ router.get('/', function (req, res) {
   // response json
   return res.json({
     text: reversed,
-    palindrome: str === reversed
+    palindrome: str.toLowerCase() === reversed.toLowerCase()
   })
 })
 
