@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  backend:
+    container_name: toolbox_backend
+    restart: always
+    build:
+      target: base
+      context: ./server
+    volumes:
+      - ./server:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 5000:5000
+    entrypoint: ./entrypoint.sh
+    environment:
+      - PORT=5000
